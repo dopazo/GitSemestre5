@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/dopaz/CLionProjects/Pilas/mainProbar.c
+stdio.h
+-
+pila_l.h
+C:/Users/dopaz/CLionProjects/Pilas/pila_l.h
+
+C:/Users/dopaz/CLionProjects/Pilas/pila_l.h
+stdio.h
+-
+stdlib.h
+-
+unistd.h
+-
+
