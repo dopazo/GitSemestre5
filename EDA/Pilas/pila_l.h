@@ -1,3 +1,6 @@
+//
+// Hecho por Juan Francisco Ternicien y Diego Opazo
+//
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>

@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/dopaz/CLionProjects/Pilas/mainProbar.c
+C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/mainProbar.c
 stdio.h
 -
 pila_l.h
-C:/Users/dopaz/CLionProjects/Pilas/pila_l.h
+C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/pila_l.h
 
-C:/Users/dopaz/CLionProjects/Pilas/pila_l.h
+C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/pila_l.h
 stdio.h
 -
 stdlib.h

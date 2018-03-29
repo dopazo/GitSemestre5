@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/dopaz/CLionProjects/Pilas/mainProbar.c" "C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug/CMakeFiles/Pilas.dir/mainProbar.c.obj"
+  "C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/mainProbar.c" "C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug/CMakeFiles/Pilas.dir/mainProbar.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

@@ -8,18 +8,18 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug"/>
+				<Option working_dir="C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Pilas">
-				<Option output="C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug/Pilas.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug"/>
+				<Option output="C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug/Pilas.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -30,15 +30,15 @@
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 Pilas"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 Pilas"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Pilas/fast">
-				<Option output="C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug/Pilas.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug"/>
+				<Option output="C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug/Pilas.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -49,40 +49,40 @@
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 Pilas/fast"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 Pilas/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug"/>
+				<Option working_dir="C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug"/>
+				<Option working_dir="C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/CLionProjects/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/dopaz/CLionProjects/Pilas/mainProbar.c">
+		<Unit filename="C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/mainProbar.c">
 			<Option target="Pilas"/>
 		</Unit>
-		<Unit filename="C:/Users/dopaz/CLionProjects/Pilas/pila_l.h">
+		<Unit filename="C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/pila_l.h">
 			<Option target="Pilas"/>
 		</Unit>
-		<Unit filename="C:/Users/dopaz/CLionProjects/Pilas/CMakeLists.txt">
+		<Unit filename="C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/Pilas/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
