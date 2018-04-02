@@ -1,0 +1,3 @@
+C:/Users/dopaz/CLionProjects/T4C_BusquedaBinariaRecursion/cmake-build-debug/CMakeFiles/T4C_BusquedaBinariaRecursion.dir
+C:/Users/dopaz/CLionProjects/T4C_BusquedaBinariaRecursion/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/dopaz/CLionProjects/T4C_BusquedaBinariaRecursion/cmake-build-debug/CMakeFiles/rebuild_cache.dir
