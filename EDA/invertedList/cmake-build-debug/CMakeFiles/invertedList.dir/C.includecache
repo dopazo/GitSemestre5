@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/dopaz/CLionProjects/invertedList/lista.h
+stdio.h
+-
+stdlib.h
+-
+unistd.h
+-
+
+C:/Users/dopaz/CLionProjects/invertedList/main.c
+stdio.h
+-
+lista.h
+C:/Users/dopaz/CLionProjects/invertedList/lista.h
+
