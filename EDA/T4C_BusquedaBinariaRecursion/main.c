@@ -3,14 +3,11 @@ int busquedaBinaria(int arreglo[], int min, int max, int buscado);
 void ordenarnumeros(int numero[], int larg);
 
 int main(void){
-
     int largo;
-
     printf("Introduzca la cantidad de elementos del arreglo \n");
     scanf(" %i", &largo);
-
     int arreglo[largo];
-
+    //llenado de arreglo
     for(int i=0; i<largo; i++){
         int numero;
         printf("introduzca un numero:\n ");
@@ -18,19 +15,20 @@ int main(void){
         arreglo[i]=numero;
         printf("\n");
     }
+    //ordenar los numeros para poder hacer busqueda binaria
     ordenarnumeros(arreglo, largo);
 
     printf("Que numero buscas?\n");
     int buscado;
     scanf(" %i",&buscado);
-
+    //busqueda binaria
     int encontrado=busquedaBinaria(arreglo,0,largo-1,buscado);
     if(encontrado<0){
         printf("El numero no se encuentra\n");
         return 0;
     }
     printf("el numero esta en la posicion: %i", encontrado);
-    //le saqué el +1 suponiendo que la primera posicion es 0
+    //suponiendo que la primera posicion es 0
 }
 
 void ordenarnumeros(int numero[], int larg){
@@ -70,5 +68,5 @@ int busquedaBinaria(int arreglo[], int min, int max, int buscado){
     if(arreglo[posActual]>buscado) //si el buscado es menor
         return busquedaBinaria(arreglo,min,posActual-1,buscado);
 
-    //return 0;
+    return 0;
 }
