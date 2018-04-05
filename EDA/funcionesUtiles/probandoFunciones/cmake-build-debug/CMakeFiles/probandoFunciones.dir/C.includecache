@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/Estructura de Datos y Algoritmos/funcionesUtiles/probandoFunciones/lista.h
+stdio.h
+-
+stdlib.h
+-
+unistd.h
+-
+
+C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/Estructura de Datos y Algoritmos/funcionesUtiles/probandoFunciones/main.c
+stdio.h
+-
+lista.h
+C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/Estructura de Datos y Algoritmos/funcionesUtiles/probandoFunciones/lista.h
+pila_l.h
+C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/Estructura de Datos y Algoritmos/funcionesUtiles/probandoFunciones/pila_l.h
+
+C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/Estructura de Datos y Algoritmos/funcionesUtiles/probandoFunciones/pila_l.h
+stdio.h
+-
+stdlib.h
+-
+unistd.h
+-
+
