@@ -5,14 +5,12 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-//crear en el main el struct node
-/*
 typedef struct node
 {
     int n;
     struct node* next;
 }node;
-*/
+
 
 //funciones
 node* push(int numero,node* head);
@@ -48,18 +46,19 @@ node* push(int numero, node* head)
 node* pop(node* head)
 {
     node* temp=head;
-    if(temp!=NULL) //si existe una pila
-    {
-        if(temp->next!=NULL){ //si sigue existiendo una pila
-            head=temp->next;
+        if(temp!=NULL) //si existe una pila
+        {
+            if(temp->next!=NULL){ //si sigue existiendo una pila
+                head=temp->next;
+            }
+            else{ //si pila queda vacia
+                head=NULL;
+            }
+            printf("%i",temp->n);
+            free(temp);
+            printf(", Eliminado el ultimo de la pila (desde pop) \n");
         }
-        else{ //si pila queda vacia
-            head=NULL;
-        }
-        free(temp);
-        printf("Eliminado el ultimo de la pila (desde pop) \n");
-    }
-    else{
+        else{
         printf("Pila vacia (desde pop)\n");
     }
     return head;

@@ -1,12 +1,6 @@
 #include <stdio.h>
-#include "lista.h"
 #include "pila_l.h"
-
-typedef struct node
-{
-    int n;
-    struct node* next;
-}node;
+//#include "lista.h"
 
 int main() {
     //probando pila_l.h
@@ -14,8 +8,10 @@ int main() {
     headPila=NULL;
     headPila=push(2,headPila);
     headPila=push(4,headPila);
-    peek(headPila);
-
+    printf("peek: %i\n",peek(headPila));
+    pop(headPila); // ???
+    printf("headPila es: %i\n",headPila->n);
+    printf("peek: %i\n",peek(headPila));
 
 
     //probando lista.h

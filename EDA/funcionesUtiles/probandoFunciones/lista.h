@@ -5,14 +5,11 @@
 //   Sorted List
 //-------------------
 
-//crear en el main el struct node
-/*
 typedef struct node
 {
     int n;
     struct node* next;
 }node;
-*/
 
 // funciones (numero, nodo inicial) la mayoria
 node* insertar(int numero, node* head);

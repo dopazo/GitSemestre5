@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/Estructura de Datos y Algoritmos/funcionesUtiles/probandoFunciones/main.c" "C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/Estructura de Datos y Algoritmos/funcionesUtiles/probandoFunciones/cmake-build-debug/CMakeFiles/probandoFunciones.dir/main.c.obj"
+  "C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/funcionesUtiles/probandoFunciones/main.c" "C:/Users/dopaz/Documents/Diego/UAI/Semestre 5/GitSemestre5/EDA/funcionesUtiles/probandoFunciones/cmake-build-debug/CMakeFiles/probandoFunciones.dir/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
