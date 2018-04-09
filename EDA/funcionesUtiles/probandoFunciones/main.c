@@ -13,7 +13,6 @@ int main() {
     printf("headPila es: %i\n",headPila->n);
     printf("peek: %i\n",peek(headPila));
 
-
     //probando lista.h
     /*
     node* head=malloc(sizeof(node));

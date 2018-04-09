@@ -1,0 +1,3 @@
+C:/Users/dopaz/CLionProjects/ejNuevoRamosAlumnos/cmake-build-debug/CMakeFiles/ejNuevoRamosAlumnos.dir
+C:/Users/dopaz/CLionProjects/ejNuevoRamosAlumnos/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/dopaz/CLionProjects/ejNuevoRamosAlumnos/cmake-build-debug/CMakeFiles/rebuild_cache.dir
