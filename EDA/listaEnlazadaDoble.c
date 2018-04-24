@@ -7,6 +7,7 @@
  * Demonstrates a linked list for numbers.
  * Modificada por Sebastian Moreno
  * Modificado nuevamente por Diego Opazo y Rodrigo Martínez
+ * lista doblemente enlazada
  */
 
 #include <stdio.h>

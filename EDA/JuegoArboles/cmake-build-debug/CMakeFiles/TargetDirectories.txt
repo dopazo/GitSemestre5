@@ -1,0 +1,3 @@
+C:/Users/dopaz/CLionProjects/JuegoArboles/cmake-build-debug/CMakeFiles/JuegoArboles.dir
+C:/Users/dopaz/CLionProjects/JuegoArboles/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/dopaz/CLionProjects/JuegoArboles/cmake-build-debug/CMakeFiles/rebuild_cache.dir
