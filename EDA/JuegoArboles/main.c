@@ -181,7 +181,19 @@ int juego(node* root){
     printf("encuentras un: %d\n",root->enElCamino);
     if(root->enElCamino==0){
         printf("Hay fuego en esta parte de la cueva, logras ver lo que hay más adelante\n");
-        printf("a la izquierda hay un %i\na la derecha hay un %i\n",root->left->enElCamino,root->right->enElCamino);
+        if(root->left==NULL){
+            printf("a la izquierda hay una salida!\n");
+        }
+        else{
+            printf("a la izquierda hay un %i\n",root->left->enElCamino);
+        }
+        if(root->right==NULL){
+            printf("a la derecha hay una salida!\n");
+        }
+        else{
+            printf("a la derecha hay un %i\n",root->right->enElCamino);
+        }
+
     }
     puntaje=puntaje+(root->enElCamino);
     printf("A donde quieres ir:\n (1) izquierda - (2) derecha\n");
