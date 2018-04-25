@@ -129,29 +129,12 @@ struct node* deleteNode(struct node* root, int key)
 }
 
 node* arbol(node* root){
-    //mas facil meterle numeros random xd, total no importa que valor tengan
     // Meterle un "selecciona largo del juego" mas grande el for y el rand%, mas grande el juego
     // Juego corto, juego medio, juego largo (?)
     for(int i=0; i<20; i++){
         int nrandom=rand()%20;
         root=insert(root,nrandom);
     }
-
-    /*root=insert(root,8);
-    root=insert(root,4);
-    root=insert(root,12);
-    root=insert(root,2);
-    root=insert(root,6);
-    root=insert(root,1);
-    root=insert(root,3);
-    root=insert(root,5);
-    root=insert(root,7);
-    root=insert(root,11);
-    root=insert(root,14);
-    root=insert(root,9);
-    root=insert(root,10);
-    root=insert(root,13);
-    root=insert(root,15);*/
     return root;
 }
 
@@ -162,7 +145,6 @@ void historia(node* root);
 int puntaje=0;
 int main()
 {
-    //create a game using a BST
     srand(time(NULL));
     node* root=malloc(sizeof(node));
     root=NULL;
@@ -173,7 +155,7 @@ int main()
 }
 
 void historia(node* root){
-    printf("Como buscador de tesoros, entras a una cueva en busqueda de oro, nada mas al entrar, ves un cadaver con un diario, en el cual dice\n");
+    printf("\nComo buscador de tesoros, entras a una cueva en busqueda de oro, nada mas al entrar, ves un cadaver con un diario, en el cual dice\n");
     printf("\n\n'Despues de todo este tiempo finalmente pude mapear las partes de la cueva donde podria encontrar un tesoro, ");
     printf("\nlos numeros que hay en las paredes me serviran para ubicarme. Debo tener cuidado con todos los monstruos que hay.'\n\n");
     printf("Luego de esto ves algo que parece encriptado, que aunque no entiendes, sientes que te podria ser util mas adelante\n\n");
