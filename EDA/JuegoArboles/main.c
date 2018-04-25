@@ -166,7 +166,12 @@ void historia(node* root){
 int juego(node* root){
     if (root==NULL){
         printf("\nEncontraste una salida!\n");
-        printf("Saliste con %i de oro!\n",puntaje);
+        if(puntaje<0){
+            printf("No ganaste nada de oro, de hecho, perdiste parte de lo que traias previamente :(\n");
+        }
+        else{
+            printf("Saliste con %i de oro!\n",puntaje);
+        }
         printf("\n(Presiona 0 para terminar)\n");
         for(;;){
             int salir;
