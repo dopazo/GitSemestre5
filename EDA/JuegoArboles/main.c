@@ -157,7 +157,7 @@ node* arbol(node* root){
 
 int juego(node* root);
 void numToString(node* root,int enElCamino);
-
+void historia(node* root);
 // Driver Program to test above functions
 int puntaje=0;
 int main()
@@ -167,13 +167,18 @@ int main()
     node* root=malloc(sizeof(node));
     root=NULL;
     root=arbol(root);
-    node* jugador1=root;
+    node* jugador=root;
+    historia(jugador);
+    juego(jugador);
+}
+
+void historia(node* root){
     printf("Como buscador de tesoros, entras a una cueva en busqueda de oro, nada mas al entrar, ves un cadaver con un diario, en el cual dice\n");
-    printf("\n\n'Despues de todo este tiempo finalmente pude mapear las partes de la cueva donde podria encontrar un tesoro, \nlos numeros que hay en las paredes me serviran para ubicarme.'\n\n");
-    printf("Luego de esto ves un texto que parece encriptado, que aunque no entiendes, sientes que te podria ser util mas adelante\n\n");
+    printf("\n\n'Despues de todo este tiempo finalmente pude mapear las partes de la cueva donde podria encontrar un tesoro, ");
+    printf("\nlos numeros que hay en las paredes me serviran para ubicarme. Debo tener cuidado con todos los monstruos que hay.'\n\n");
+    printf("Luego de esto ves algo que parece encriptado, que aunque no entiendes, sientes que te podria ser util mas adelante\n\n");
     inorder(root); printf("\n\n");
     printf("Luego de esto, te decides a avanzar en busqueda de tesoros...\n\n");
-    juego(jugador1);
 }
 
 int juego(node* root){
