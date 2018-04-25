@@ -31,8 +31,8 @@ struct node *newNode(int item)
     struct node *temp =  (struct node *)malloc(sizeof(struct node));
     temp->key = item;
     int enElCamino=(rand()%7)-2; //random entre -2 y 3 tesoros o monstruos
-    if(enElCamino==0)  //disminuir probabilidad de 0
-        enElCamino=(rand()%4)-3;
+    //if(enElCamino==0)  //disminuir probabilidad de 0
+    //    enElCamino=(rand()%4)-3;
     temp->enElCamino=enElCamino;
     temp->left = temp->right = NULL;
     return temp;
@@ -129,7 +129,15 @@ struct node* deleteNode(struct node* root, int key)
 }
 
 node* arbol(node* root){
-    root=insert(root,8);
+    //mas facil meterle numeros random xd, total no importa que valor tengan
+    // Meterle un "selecciona largo del juego" mas grande el for y el rand%, mas grande el juego
+    // Juego corto, juego medio, juego largo (?)
+    for(int i=0; i<20; i++){
+        int nrandom=rand()%20;
+        root=insert(root,nrandom);
+    }
+
+    /*root=insert(root,8);
     root=insert(root,4);
     root=insert(root,12);
     root=insert(root,2);
@@ -143,7 +151,7 @@ node* arbol(node* root){
     root=insert(root,9);
     root=insert(root,10);
     root=insert(root,13);
-    root=insert(root,15);
+    root=insert(root,15);*/
     return root;
 }
 
@@ -171,6 +179,10 @@ int juego(node* root){
     }
     printf("estas en la posicion: %d\n",root->key);
     printf("encuentras un: %d\n",root->enElCamino);
+    if(root->enElCamino==0){
+        printf("Hay fuego en esta parte de la cueva, logras ver lo que hay más adelante\n");
+        printf("a la izquierda hay un %i\na la derecha hay un %i\n",root->left->enElCamino,root->right->enElCamino);
+    }
     puntaje=puntaje+(root->enElCamino);
     printf("A donde quieres ir:\n (1) izquierda - (2) derecha\n");
     int seleccion;
