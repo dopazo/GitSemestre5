@@ -156,6 +156,7 @@ node* arbol(node* root){
 }
 
 int juego(node* root);
+void numToString(node* root,int enElCamino);
 
 // Driver Program to test above functions
 int puntaje=0;
@@ -166,35 +167,31 @@ int main()
     node* root=malloc(sizeof(node));
     root=NULL;
     root=arbol(root);
-    inorder(root); printf("\n");
-    juego(root);
+    node* jugador1=root;
+    printf("Como buscador de tesoros, entras a una cueva en busqueda de oro, nada mas al entrar, ves un cadaver con un diario, en el cual dice\n");
+    printf("\n\n'Despues de todo este tiempo finalmente pude mapear las partes de la cueva donde podria encontrar un tesoro, \nlos numeros que hay en las paredes me serviran para ubicarme.'\n\n");
+    printf("Luego de esto ves un texto que parece encriptado, que aunque no entiendes, sientes que te podria ser util mas adelante\n\n");
+    inorder(root); printf("\n\n");
+    printf("Luego de esto, te decides a avanzar en busqueda de tesoros...\n\n");
+    juego(jugador1);
 }
 
 int juego(node* root){
     if (root==NULL){
-        printf("Terminaste\n");
-        printf("puntaje: %i\n",puntaje);
-
+        printf("\nEncontraste una salida!\n");
+        printf("Saliste con %i de oro!\n",puntaje);
+        printf("\n(Presiona 0 para terminar)\n");
+        for(;;){
+            int salir;
+            scanf(" %i",&salir);
+            if(salir==0)
+                break;
+        }
         return 0;
     }
-    printf("estas en la posicion: %d\n",root->key);
-    printf("encuentras un: %d\n",root->enElCamino);
-    if(root->enElCamino==0){
-        printf("Hay fuego en esta parte de la cueva, logras ver lo que hay más adelante\n");
-        if(root->left==NULL){
-            printf("a la izquierda hay una salida!\n");
-        }
-        else{
-            printf("a la izquierda hay un %i\n",root->left->enElCamino);
-        }
-        if(root->right==NULL){
-            printf("a la derecha hay una salida!\n");
-        }
-        else{
-            printf("a la derecha hay un %i\n",root->right->enElCamino);
-        }
+    printf("En la pared ves un %d\n",root->key);
+    numToString(root,root->enElCamino);
 
-    }
     puntaje=puntaje+(root->enElCamino);
     printf("A donde quieres ir:\n (1) izquierda - (2) derecha\n");
     int seleccion;
@@ -204,5 +201,43 @@ int juego(node* root){
     }
     else{
         juego(root->right);
+    }
+}
+
+void numToString(node* root, int enElCamino){
+    //desde -2 a 4
+    if (enElCamino == -2){
+        printf("Encontraste un monstruo gigante! Lograste seguir pero perdiste gran parte de tu tesoro.\n");
+    }
+    else if (enElCamino == -1){
+        printf("Encontraste un monstruo. Te quito un poco de oro pero sigues a delante.\n");
+    }
+    else if(enElCamino == 0){
+        printf("Hay fuego en esta parte de la cueva, logras ver lo que hay mas adelante\n");
+        if(root->left==NULL){
+            printf("A la izquierda ves una salida!\n");
+        }
+        else{
+            printf("A la izquierda ves un %i en la pared\n",root->left->key);
+        }
+
+        if(root->right==NULL){
+            printf("A la derecha ves una salida!\n");
+        }
+        else{
+            printf("A la derecha ves un %i en la pared\n",root->right->key);
+        }
+    }
+    else if(enElCamino == 1){
+        printf("Encontraste un poquito de oro\n");
+    }
+    else if(enElCamino == 2){
+        printf("Encontraste un diamante\n");
+    }
+    else if(enElCamino == 3){
+        printf("Encontraste mucho oro!\n");
+    }
+    else{
+        printf("Encontraste muchos diamantes!\n");
     }
 }
