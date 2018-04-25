@@ -145,6 +145,10 @@ void historia(node* root);
 int puntaje=0;
 int main()
 {
+    printf("\n\n");
+    printf("                          #######################################\n");
+    printf("                          ##           INTDIANA JONES          ##\n");
+    printf("                          #######################################\n\n");
     srand(time(NULL));
     node* root=malloc(sizeof(node));
     root=NULL;
