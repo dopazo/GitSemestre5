@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define MAX 100
+
 typedef struct edges
 {
     //campos que tenga el edge
@@ -16,7 +18,7 @@ typedef struct node
     int n;
     //todos sus "nexts"
     edges* firstEdge;
-    //next node(?) necesario? no perder ningun nodo
+    //next node, no perder ninguno
     struct node* nextNode;
 }node;
 
@@ -29,7 +31,7 @@ void mostrarGrafo(node* head);
 node* head=NULL;
 
 int main(){
-    head=insertNode(1,head);
+    /*head=insertNode(1,head);
     head=insertNode(2,head);
     head=insertNode(3,head);
     head=insertNode(4,head);
@@ -38,6 +40,69 @@ int main(){
     insertUndirectedEdge(2,3);
     insertUndirectedEdge(2,4);
     insertUndirectedEdge(3,4);
+    */
+
+    //ver cantidad de nodos a crear
+    FILE *archivo;
+    char dato;
+    int lineas=0;
+    archivo = fopen("red.txt", "r" );
+    for(;;){
+        fscanf(archivo, "%c",&dato);
+        if (feof(archivo)) break;
+        if(dato=='\n'){
+            lineas++;
+        }
+    }
+    fclose (archivo);
+
+    //crear nodos
+    FILE *ptr_file;
+    int nodo;
+    int creados[MAX];
+    int z=0;
+    ptr_file =fopen("red.txt","r");
+    if (!ptr_file)
+        return 1;
+
+    for(int i =0; i<lineas;i++){ //5 porque es la "altura" del txt
+        for(int j=0;j<2; j++){  //2 porque es la cantidad de datos hacia el lado que hay
+            fscanf(ptr_file,"%d", &nodo); //almacena el primer numero en variable nodo
+            if(z>0){
+                int repetido=0; //revisa para no crear nodos con mismo numero
+                for(int t=0; t<z; t++){
+                    if(nodo == creados[t]) repetido++;
+                }
+                if(repetido == 0){
+                    creados[z] = nodo;  //si no es repetido lo almacena en array
+                    z++;
+                    //printf("nodo: %d\n",nodo);
+                }
+            }
+            else {
+                creados[z] = nodo;  //caso base
+                z++;
+                //printf("nodo: %d\n",nodo);
+            }
+        }
+    }
+    fclose(ptr_file);
+    for(int i=0; i<z; i++) head = insertNode(creados[i], head); //crea los nodos
+
+    //hacer uniones
+    FILE *ptr_file2 = fopen("red.txt","r");
+    int nodo2;
+    for(int i=0; i<lineas; i++){
+        int n1 = 0;
+        int n2 = 0;
+        for(int j=0;j<2;j++){
+            fscanf(ptr_file2, "%d", &nodo2);
+            if(j==0) n1 = nodo2;
+            if(j==1) n2 = nodo2;
+        }
+        insertUndirectedEdge(n1, n2);
+    }
+
 
     mostrarGrafo(head);
 }
@@ -85,8 +150,6 @@ int insertEdge(int nNode1, int nNode2){
         node1->firstEdge=newEdge;
         return 0;
     }
-
-    //TODO codigo para evitar uniones ya existentes?
 
     //recorrer lista de edges del node1
     edges* tmpEdges=node1->firstEdge;
