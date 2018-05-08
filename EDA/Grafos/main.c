@@ -27,6 +27,7 @@ int insertEdge(int nNode1, int nNode2);
 int insertUndirectedEdge(int nNode1, int nNode2);
 node* searchNode(int nNode);
 void mostrarGrafo(node* head);
+int importarRed();
 
 node* head=NULL;
 
@@ -41,12 +42,19 @@ int main(){
     insertUndirectedEdge(2,4);
     insertUndirectedEdge(3,4);
     */
+    importarRed();
+    mostrarGrafo(head);
+}
+
+int importarRed(){
 
     //ver cantidad de nodos a crear
     FILE *archivo;
     char dato;
     int lineas=0;
     archivo = fopen("red.txt", "r" );
+    if (!archivo)
+        return 1;
     for(;;){
         fscanf(archivo, "%c",&dato);
         if (feof(archivo)) break;
@@ -102,9 +110,6 @@ int main(){
         }
         insertUndirectedEdge(n1, n2);
     }
-
-
-    mostrarGrafo(head);
 }
 
 node* insertNode(int n, node* head){
