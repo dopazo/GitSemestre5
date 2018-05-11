@@ -28,6 +28,7 @@ int insertUndirectedEdge(int nNode1, int nNode2);
 node* searchNode(int nNode);
 void mostrarGrafo(node* head);
 int importarRed();
+int mostrarVecinos(int nNode);
 
 node* head=NULL;
 
@@ -44,6 +45,14 @@ int main(){
     */
     importarRed();
     mostrarGrafo(head);
+    int vecino;
+    int errorVecinos;
+    do {
+        printf("Ingrese el numero del nodo que desea conocer vecinos: ");
+        scanf(" %i",&vecino);
+        errorVecinos=mostrarVecinos(vecino);
+    } while (errorVecinos==1);
+
 }
 
 int importarRed(){
@@ -192,7 +201,13 @@ void mostrarGrafo(node* head){
     // Recorriendo la lista
     printf("Lista:\n");
     node* ptrNode = head;
-    edges* ptrEdges=head->firstEdge;
+    edges* ptrEdges=NULL;
+    if(ptrNode!=NULL) {
+        ptrEdges = head->firstEdge;
+    }
+    else{
+        printf("Vacia\n");
+    }
     while (ptrNode != NULL)
     {
         printf("%i-> ", ptrNode->n);
@@ -206,4 +221,19 @@ void mostrarGrafo(node* head){
             ptrEdges=ptrNode->firstEdge;
     }
     printf("\n\n");
+}
+
+int mostrarVecinos(int nNode) {
+    node *ptrNode = searchNode(nNode);
+    if(ptrNode==NULL){
+        printf("No existe tal nodo\n");
+        return 1;
+    }
+    edges *ptrEdges = ptrNode->firstEdge;
+    printf("Vecinos de %i:\n",nNode);
+    while (ptrEdges != NULL) {
+        printf("%i ", ptrEdges->nextNode->n);
+        ptrEdges = ptrEdges->nextEdge;
+    }
+    return 0;
 }
