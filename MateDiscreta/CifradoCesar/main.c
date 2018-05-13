@@ -45,7 +45,7 @@ void encriptar()
         error=0;
         printf("\nEnter text to encrypt\n");
         char texto[MAX];
-        scanf(" %[^\t\n]",texto);
+        scanf(" %[^\t\n]",texto); //preguntar al usuario, lo guarda en array texto
         printf("Enter shift value:\n");
         int llave;
         scanf(" %i",&llave);
@@ -57,17 +57,17 @@ void encriptar()
             }while(llave>26 || llave<-26);
         }
 
-        largo = strlen(texto);
+        largo = strlen(texto); //define largo como el largo del array texto
         for(int k=0;k<largo;k++)//encriptar
         {
-            int encriptar=((int)texto[k]);//toma una letra
+            int encriptar=((int)texto[k]);//toma una letra, typecastea a numero (ascii)
 
             if(encriptar>96 && encriptar<123)//si entre a-z
             {
                 encriptar=encriptar+llave;
 
-                while(encriptar>122 || encriptar < 97)
-                {
+                while(encriptar>122 || encriptar < 97) //si al sumar me salgo del limite, hago ciclico
+                { //TODO : cambiarlo por mod 26
                     if(llave>=0)
                         encriptar=(encriptar-26);
                     if(llave<0)
@@ -78,32 +78,33 @@ void encriptar()
             else if(encriptar > 64 && encriptar < 91)//si entre A-Z
             {
                 encriptar = encriptar + llave;
-                while (encriptar > 90 || encriptar <65) {
+                while (encriptar > 90 || encriptar <65) { //si al sumar me salgo del limite, hago ciclico
+                    //TODO : cambiarlo por mod 26
                     if(llave>=0)
                         encriptar = (encriptar - 26);
                     if(llave<0)
                         encriptar= (encriptar+26);
                 }
             }
-            else if(encriptar==32){
+            else if(encriptar==32){ //si hay algun espacio, no hacer nada
                 ;
             }
-            else{
+            else{ //si hay caracter -> error
                 printf("Character invalid, '%c' in position %d\n",texto[k],k+1);
                 error=1;
             }
-            if(encriptar!=32){
+            if(encriptar!=32){ //si no es un espacio, cambia minuscula a mayuscula
                 if(!(encriptar>64 && encriptar <91)){
                     encriptar=encriptar-32;//la cambia a mayuscula
                 }
             }
-            texto2[k]=(char)encriptar;
+            texto2[k]=(char)encriptar; //guarda la letra en un array texto2, typecasteado a letra nuevamente
         }
-    } while (error==1);
+    } while (error==1); //si hay error, preguntar denuevo
 
     printf("Your message encrypted: ");
     for(int k=0;k<largo;k++){
-        if(texto2[k]!=32)
+        if(texto2[k]!=32) //imprime el texto, ignora el espacio (32)
             printf("%c",texto2[k]);
     }
 
@@ -117,8 +118,8 @@ void desencriptar() {
     do {
         error=0;
         printf("\nEnter text to decrypt:\n");
-        char texto[50];
-        scanf(" %[^\t\n]",texto);
+        char texto[MAX];
+        scanf(" %[^\t\n]",texto); //lee lo escrito en teclado, guarda en array texto
         printf("Enter shift value:\n");
         int llave;
         scanf(" %i",&llave);
@@ -133,13 +134,14 @@ void desencriptar() {
         printf("\n\n");
         for (int k = 0; k < largo; k++)//encriptar
         {
-            int encriptar = ((int) texto[k]);//toma una letra
+            int encriptar = ((int) texto[k]);//toma una letra, typecastea a numero (ascii)
 
             if (encriptar > 64 && encriptar < 91)//si entre A-Z
             {
                 encriptar = encriptar - llave;
 
-                while (encriptar > 90 || encriptar < 65) {
+                while (encriptar > 90 || encriptar < 65) { //si al restar me salgo del limite, hago ciclico
+                    //TODO : cambiarlo por mod
                     if(llave>=0)
                         encriptar = (encriptar + 26);
                     if(llave<0)
@@ -150,8 +152,9 @@ void desencriptar() {
             {
                 encriptar=encriptar-llave;
 
-                while(encriptar>122 || encriptar<97)
+                while(encriptar>122 || encriptar<97) //si al restar me salgo del limite, hago ciclico
                 {
+                    //TODO : cambiarlo por mod
                     if(llave>=0)
                         encriptar=(encriptar+26);
                     if(llave<0)
@@ -159,17 +162,17 @@ void desencriptar() {
                 }
 
             }
-            else if(encriptar==32){
+            else if(encriptar==32){ //si hay un espacio -> error
                 printf("Character invalid, in position %d text cant have blank spaces\n",k+1);
                 error=1;
             }
-            else{
+            else{ //si hay caracter -> error
                 printf("Character invalid, '%c' in position %d\n",texto[k],k+1);
                 error=1;
             }
 
-            if(!(encriptar>96 && encriptar <123)){
-                encriptar=encriptar+32;//la cambia a minuscula
+            if(!(encriptar>64 && encriptar <91)){
+                encriptar=encriptar-32;//la cambia a mayuscula
             }
 
             texto2[k]=(char)encriptar;
@@ -177,7 +180,7 @@ void desencriptar() {
     } while (error==1);
 
     printf("Your message decrypted: ");
-    for(int k=0;k<largo;k++){
+    for(int k=0;k<largo;k++){ //imprime el texto desencriptado
         printf("%c",texto2[k]);
     }
     printf("\n\n");
