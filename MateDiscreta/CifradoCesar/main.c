@@ -2,6 +2,8 @@
 #include <string.h>
 #include <stdlib.h>
 
+//Diego Opazo
+
 #define MAX 100
 
 void encriptar();
@@ -22,7 +24,7 @@ int main(void){
         printf("Choose an option:");
 
         scanf(" %c",&c);
-
+        fflush(stdin);
         // Ejecutar la opción
         switch (c)
         {
@@ -50,12 +52,14 @@ void encriptar()
         int llave;
         scanf(" %i",&llave);
 
-        if(llave>=26 || llave<=-26){
+        if(llave>=26 || llave<=-26 || llave==0){
             do{
-                printf("Shift value out of range\n");
+                printf("Invalid shift value\n");
                 scanf(" %i",&llave);
-            }while(llave>26 || llave<-26);
+                fflush(stdin);
+            }while(llave>=26 || llave<=-26 || llave==0);
         }
+
 
         largo = strlen(texto); //define largo como el largo del array texto
         for(int k=0;k<largo;k++)//encriptar
@@ -67,11 +71,19 @@ void encriptar()
                 encriptar=encriptar+llave;
 
                 while(encriptar>122 || encriptar < 97) //si al sumar me salgo del limite, hago ciclico
-                { //TODO : cambiarlo por mod 26
-                    if(llave>=0)
-                        encriptar=(encriptar-26);
-                    if(llave<0)
+                { //TODO : cambiarlo por mod 26, DONE
+                    if(llave>=0){
+                        encriptar=encriptar-97;
+                        encriptar=encriptar%26;
+                        encriptar=encriptar+97;
+                        //encriptar=(encriptar-26);
+                    }
+                    if(llave<0) {
                         encriptar=(encriptar+26);
+                        encriptar=encriptar-97;
+                        encriptar=encriptar%26;
+                        encriptar=encriptar+97;
+                    }
                 }
 
             }
@@ -79,11 +91,19 @@ void encriptar()
             {
                 encriptar = encriptar + llave;
                 while (encriptar > 90 || encriptar <65) { //si al sumar me salgo del limite, hago ciclico
-                    //TODO : cambiarlo por mod 26
-                    if(llave>=0)
-                        encriptar = (encriptar - 26);
-                    if(llave<0)
+                    //TODO : cambiarlo por mod 26, DONE
+                    if(llave>=0){
+                        encriptar=encriptar-65;
+                        encriptar=encriptar%26;
+                        encriptar=encriptar+65;
+                        //encriptar = (encriptar - 26);
+                    }
+                    if(llave<0){
                         encriptar= (encriptar+26);
+                        encriptar=encriptar-65;
+                        encriptar=encriptar%26;
+                        encriptar=encriptar+65;
+                    }
                 }
             }
             else if(encriptar==32){ //si hay algun espacio, no hacer nada
@@ -123,11 +143,11 @@ void desencriptar() {
         printf("Enter shift value:\n");
         int llave;
         scanf(" %i",&llave);
-        if(llave>=26 || llave<=-26){
+        if(llave>=26 || llave<=-26 || llave==0){
             do{
-                printf("Shift value out of range\n");
+                printf("Invalid shift value\n");
                 scanf(" %i",&llave);
-            }while(llave>26 || llave<-26);
+            }while(llave>=26 || llave<=-26 || llave==0);
         }
 
         largo = strlen(texto);
@@ -141,11 +161,19 @@ void desencriptar() {
                 encriptar = encriptar - llave;
 
                 while (encriptar > 90 || encriptar < 65) { //si al restar me salgo del limite, hago ciclico
-                    //TODO : cambiarlo por mod
-                    if(llave>=0)
+                    //TODO : cambiarlo por mod, DONE
+                    if(llave>=0){
                         encriptar = (encriptar + 26);
-                    if(llave<0)
-                        encriptar = (encriptar-26);
+                        encriptar=encriptar-65;
+                        encriptar=encriptar%26;
+                        encriptar=encriptar+65;
+                    }
+                    if(llave<0){
+                        //encriptar = (encriptar-26);
+                        encriptar=encriptar-65;
+                        encriptar=encriptar%26;
+                        encriptar=encriptar+65;
+                    }
                 }
             }
             else if(encriptar>96 && encriptar<123)//si entre a-z
@@ -154,11 +182,19 @@ void desencriptar() {
 
                 while(encriptar>122 || encriptar<97) //si al restar me salgo del limite, hago ciclico
                 {
-                    //TODO : cambiarlo por mod
-                    if(llave>=0)
+                    //TODO : cambiarlo por mod, DONE
+                    if(llave>=0){
                         encriptar=(encriptar+26);
-                    if(llave<0)
-                        encriptar=(encriptar-26);
+                        encriptar=encriptar-97;
+                        encriptar=encriptar%26;
+                        encriptar=encriptar+97;
+                    }
+                    if(llave<0){
+                        //encriptar=(encriptar-26);
+                        encriptar=encriptar-97;
+                        encriptar=encriptar%26;
+                        encriptar=encriptar+97;
+                    }
                 }
 
             }
