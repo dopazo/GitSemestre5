@@ -11,7 +11,6 @@ typedef struct node{
 } node;
 
 //inicializar
-
 pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t data = PTHREAD_COND_INITIALIZER;
 pthread_cond_t empty = PTHREAD_COND_INITIALIZER;
@@ -97,7 +96,7 @@ node* remove_back(node* head)
 }
 int count=0;
 
-void *createLinkedList(void *arg){
+void *fullLinkedList(void *arg){
   int i;
   int largo = (int) arg;
   for(i=0;i<largo;i++){
@@ -109,7 +108,7 @@ void *createLinkedList(void *arg){
     count++;
     //printf("(%p)",&i);
     pthread_mutex_unlock(&lock);
-    //for(int j=0;j<99999;j++){;}
+    //for(int j=0;j<99999;j++){;} //se alternan los threads?
   }
 }
 
@@ -126,8 +125,8 @@ int main(void) {
   // luego en paralelo
   
   pthread_t p1, p2;
-  pthread_create(&p1, NULL, createLinkedList, (void*)(MAX/2));
-  pthread_create(&p2, NULL, createLinkedList, (void*)(MAX/2));
+  pthread_create(&p1, NULL, fullLinkedList, (void*)(MAX/2));
+  pthread_create(&p2, NULL, fullLinkedList, (void*)(MAX/2));
 
   pthread_join(p1, NULL);
   pthread_join(p2, NULL);
