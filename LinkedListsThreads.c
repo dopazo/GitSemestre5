@@ -1,6 +1,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <pthread.h>
+#include <stdint.h>
+
+#define MAX 100
 
 typedef struct node{
     int data;
@@ -8,8 +11,12 @@ typedef struct node{
 } node;
 
 //inicializar
-//pthread_cond_t data = PTHREAD_COND_INITIALIZER;
-//pthread_cond_t empty = PTHREAD_COND_INITIALIZER;
+
+pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
+pthread_cond_t data = PTHREAD_COND_INITIALIZER;
+pthread_cond_t empty = PTHREAD_COND_INITIALIZER;
+
+node* head = NULL;
 
 void print_list(node* head)
 {
@@ -31,7 +38,9 @@ node* create(int data,node* next)
     }
     new_node->data = data;
     new_node->next = next;
- 
+
+    //count++;
+
     return new_node;
 }
 
@@ -86,25 +95,43 @@ node* remove_back(node* head)
  
     return head;
 }
+int count=0;
+
+void *createLinkedList(void *arg){
+  int i;
+  int largo = (int) arg;
+  for(i=0;i<largo;i++){
+    pthread_mutex_lock(&lock);
+    if(head==NULL)
+      head=create(0,head);
+    else
+      append(head,count);
+    count++;
+    //printf("(%p)",&i);
+    pthread_mutex_unlock(&lock);
+    //for(int j=0;j<99999;j++){;}
+  }
+}
 
 int main(void) {
-  node* head = NULL;
-  head=create(0,head);
+
+  //head=create(0,head);
+
   // inserte código para agregar 100 nodos
   // primero secuencialmente (usando un ciclo)
   /*for (int i = 1; i < 100; i++){
-    head = append(head, i);
+    append(head, i);
   }*/
   
   // luego en paralelo
-  pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
   
-  for (int i = 1; i < 100; i++){
-    pthread_mutex_lock(&lock);
-    head = append(head, i);
-    pthread_mutex_unlock(&lock);
-  }
-  
+  pthread_t p1, p2;
+  pthread_create(&p1, NULL, createLinkedList, (void*)(MAX/2));
+  pthread_create(&p2, NULL, createLinkedList, (void*)(MAX/2));
+
+  pthread_join(p1, NULL);
+  pthread_join(p2, NULL);
+
   print_list(head);
   printf("\nListo!\n");
   return 0;
